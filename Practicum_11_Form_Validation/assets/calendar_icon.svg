@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#fef3c7"/>
+  <rect x="30" y="40" width="340" height="170" rx="8" fill="#b45309"/>
+  <text x="200" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="22" font-weight="bold">Exam Schedule 2026</text>
+  <text x="200" y="150" text-anchor="middle" fill="#fef3c7" font-family="Arial" font-size="14">Morning &amp; Afternoon Sessions</text>
+</svg>

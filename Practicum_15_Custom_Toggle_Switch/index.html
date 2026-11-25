@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAEB Examination Registration Portal - Practicum 15 (Final Complete Portal)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>National Academic Examination Board (NAEB)</h1>
+    <p>Official Examination Registration &amp; Candidate Information Portal</p>
+    <figure>
+      <img src="assets/banner.svg" alt="NAEB Examination Portal Banner" width="800">
+      <figcaption>Figure 1: NAEB All-India Common Assessment Test 2026 Official Banner</figcaption>
+    </figure>
+  </header>
+
+  <nav>
+    <div class="nav-brand">NAEB PORTAL 2026</div>
+    <ul>
+      <li><a href="#exam-details">Examination Details</a></li>
+      <li><a href="#subjects-schedule">Subjects &amp; Schedule</a></li>
+      <li><a href="#multimedia-guide">Candidate Briefing &amp; Walkthrough</a></li>
+      <li><a href="#eligibility">Eligibility Criteria</a></li>
+      <li><a href="#instructions">Candidate Instructions</a></li>
+      <li><a href="#registration-form">Student Registration Form</a></li>
+    </ul>
+    <div class="theme-switch-wrapper">
+      <label for="darkModeSwitch"><span id="modeStatusLabel">Night Exam Mode: OFF</span></label>
+      <input type="checkbox" id="darkModeSwitch" class="custom-switch" aria-label="Toggle Night Exam Mode">
+    </div>
+  </nav>
+
+  <main>
+    <section id="exam-details" class="exam-card-wrapper">
+      <span class="live-badge">LIVE PORTAL</span>
+      <h2>1. Examination Details</h2>
+      <article>
+        <h3>All-India Common Assessment Test (AICAT - 2026)</h3>
+        <div class="static-note"><strong>Notice (Static Flow):</strong> Applications are accepted strictly online through this portal.</div>
+        <p>The National Academic Examination Board conducts the All-India Common Assessment Test for admission into undergraduate Engineering, Sciences, and Management programs across affiliated institutions.</p>
+        <ul>
+          <li><strong>Examination Mode:</strong> Computer-Based Test (CBT) at designated centers</li>
+          <li><strong>Duration:</strong> 180 Minutes (3 Hours)</li>
+          <li><strong>Registration Window:</strong> November 1, 2026 to December 15, 2026</li>
+          <li><strong>Application Fee:</strong> INR 1,200 (General/OBC) | INR 600 (SC/ST/PwD)</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="subjects-schedule">
+      <h2>2. Subjects, Date &amp; Time Schedule</h2>
+      <table >
+        <thead>
+          <tr>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Exam Date</th>
+            <th>Time Slot</th>
+            <th>Max Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SUB-101</td>
+            <td>Engineering Mathematics</td>
+            <td>January 10, 2027</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>SUB-102</td>
+            <td>Applied Physics</td>
+            <td>January 11, 2027</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>SUB-103</td>
+            <td>Computer Science &amp; Logic</td>
+            <td>January 12, 2027</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>SUB-104</td>
+            <td>General Aptitude &amp; English</td>
+            <td>January 13, 2027</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>100</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+                <section id="live-center-api">
+      <h2>2B. Live Examination Center Seat Availability (API Endpoint Feed)</h2>
+      <p>Real-time seat status fetched asynchronously from the NAEB Exam Center Endpoint:</p>
+      <button type="button" id="refreshCentersBtn" style="margin-bottom:12px;">Fetch / Refresh Live Center Data</button>
+      <p id="apiStatusMessage" style="font-weight:600; color:#1e3a8a;"></p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Center Code</th>
+              <th>City</th>
+              <th>Venue Name</th>
+              <th>Exam Date</th>
+              <th>Seats Available</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="centerTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="dom-subject-planner">
+      <h2>2A. Custom Elective Subject &amp; Exam Center Planner (DOM Manipulation)</h2>
+      <p>Dynamically add, update, or remove your preferred optional workshop/subject choices without reloading the page:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+        <input type="text" id="customSubjectInput" placeholder="Enter Elective Subject (e.g., Artificial Intelligence - SUB-105)">
+        <button type="button" id="addSubjectBtn">Add Subject</button>
+      </div>
+      <p>Total Custom Electives Selected: <span id="subjectCount">0</span></p>
+      <ul id="dynamicSubjectList"></ul>
+    </section>
+
+    <section id="campus-gallery">
+      <h2>3A. Examination Facilities &amp; Process Gallery</h2>
+      <p>Overview of CBT infrastructure, QR admit cards, schedules, and support centers:</p>
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="assets/exam_hall.svg" alt="CBT Examination Hall">
+          <figcaption>1. Proctored CBT Computer Labs</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/admit_card.svg" alt="Digital QR Hall Ticket">
+          <figcaption>2. QR-Enabled Digital Hall Ticket</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/calendar_icon.svg" alt="Exam Schedule 2026">
+          <figcaption>3. Multi-Shift Exam Calendar 2026</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/support_desk.svg" alt="Candidate Support Desk">
+          <figcaption>4. Dedicated Candidate Helpdesk</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="multimedia-guide">
+      <h2>3. Multimedia Candidate Briefing &amp; Center Locator</h2>
+      <article>
+        <h3>Audio Instructions for Visually Assisted &amp; General Candidates</h3>
+        <p>Listen to the official Controller of Examinations audio advisory before filling out the form:</p>
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser does not support the HTML5 audio element.
+        </audio>
+        <p><small><em>Audio Caption: Pre-examination guidelines regarding biometric attendance and hall ticket verification.</em></small></p>
+      </article>
+
+      <article>
+        <h3>Computer-Based Test (CBT) Interface Walkthrough Video</h3>
+        <video width="560" height="315" controls poster="assets/exam_hall.svg">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the HTML5 video tag.
+        </video>
+        <p><small><em>Video Caption: Step-by-step demonstration of navigating questions, marking for review, and submitting the online exam.</em></small></p>
+      </article>
+
+      <article>
+        <h3>Primary Examination Center Map &amp; Information Brochure (Embedded Frame)</h3>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.5800%2C12.9600%2C77.6100%2C12.9850&amp;layer=mapnik" width="560" height="300" title="Regional Examination Center Map"></iframe>
+        <p><small><em>Interactive Map: Regional CBT Center Zone - Bengaluru Central Campus.</em></small></p>
+      </article>
+    </section>
+
+    <section id="eligibility">
+      <h2>4. Eligibility Criteria <button type="button" id="showDeadlineToastBtn" style="margin-left:12px;padding:6px 12px;font-size:0.85rem;">Check Fee &amp; Deadline Alert</button></h2>
+      <ul>
+        <li>Candidate must have passed or be appearing in Class 12 / Pre-University Examination from a recognized board.</li>
+        <li>Minimum aggregate of 60% marks in Physics, Chemistry, and Mathematics (55% for reserved categories).</li>
+        <li>Candidates born on or after October 1, 2003 are eligible to apply.</li>
+      </ul>
+    </section>
+
+    <section id="instructions">
+      <h2>5. Mandatory Examination Instructions <button type="button" id="toggleInstructionsBtn" style="margin-left:12px;padding:6px 12px;font-size:0.85rem;">Hide Mandatory Instructions</button></h2>
+      <div id="instructionsBody" class="collapsible-content">
+      <ol>
+        <li>Report to the examination center at least 60 minutes prior to the scheduled start time.</li>
+        <li>Carry a printed copy of the QR-enabled Hall Ticket along with an original government photo ID.</li>
+        <li>Electronic gadgets, smartwatches, and programmable calculators are strictly prohibited.</li>
+      </ol>
+    </section>
+          <section id="exam-prep-task-manager">
+      <h2>5A. Candidate Exam Preparation &amp; Document Checklist Manager (CRUD + LocalStorage)</h2>
+      <p>Track your exam preparation milestones, fee payment, and document uploads. Data persists in your browser automatically.</p>
+      <form id="taskForm" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+        <input type="text" id="taskTitleInput" placeholder="e.g., Upload Scanned Signature &amp; Photo" required style="flex:2; min-width:220px;">
+        <select id="taskPriorityInput" style="flex:1; min-width:140px;">
+          <option value="High">High Priority</option>
+          <option value="Medium">Medium Priority</option>
+          <option value="Low">Low Priority</option>
+        </select>
+        <button type="submit">Add Checklist Task</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Checklist Task</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskTableBody"></tbody>
+      </table>
+    </section>
+
+        <section id="interactive-faq">
+      <h2>5B. Interactive Candidate FAQ &amp; Fee Estimator</h2>
+      <details open>
+        <summary>How is the examination fee calculated for multiple papers?</summary>
+        <p>General/OBC candidates pay INR 1,200 base fee covering up to 2 subjects, plus INR 300 per additional subject. SC/ST/PwD candidates receive a 50% fee concession.</p>
+      </details>
+      <details>
+        <summary>Can I change my allotted examination center after form submission?</summary>
+        <p>Yes, a one-time correction window will open from December 18 to December 20, 2026 on this portal.</p>
+      </details>
+      <details>
+        <summary>When will the QR-enabled Hall Tickets be released?</summary>
+        <p>Hall tickets will be available for download 10 days prior to the first examination date.</p>
+      </details>
+    </section>
+
+    <section id="registration-form">
+      <h2>6. Student Examination Registration Form</h2>
+      <p>Complete all mandatory fields accurately. Information entered here will be printed on your Hall Ticket.</p>
+      <form id="examRegForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+        <fieldset>
+          <legend>Personal &amp; Account Details</legend>
+          <p>
+            <label for="fullName">Full Name (as per Class 10 Certificate): *</label><br>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g., Aarav Sharma" pattern="[A-Za-z ]{3,60}" required minlength="3" maxlength="60">
+          </p>
+          <p>
+            <label for="email">Email Address: *</label><br>
+            <input type="email" id="email" name="email" placeholder="candidate@example.com" required>
+          </p>
+          <p>
+            <label for="password">Create Portal Password: *</label><br>
+            <input type="password" id="password" name="password" placeholder="Minimum 8 characters" required minlength="8">
+          </p>
+          <p>
+            <label for="dob">Date of Birth: *</label><br>
+            <input type="date" id="dob" name="dob" min="2003-10-01" max="2010-12-31" required>
+          </p>
+          <p>
+            <label for="percentage">Class 12 Aggregate Percentage (%): *</label><br>
+            <input type="number" id="percentage" name="percentage" min="55" max="100" step="0.1" placeholder="e.g., 84.5" required>
+          </p>
+          <p>
+            <span>Gender: *</span><br>
+            <input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Examination Preferences &amp; Documents</legend>
+          <p>
+            <label for="examCity">Preferred Examination Center City: *</label><br>
+            <select id="examCity" name="examCity" required>
+              <option value="">-- Select Examination City --</option>
+              <option value="Bengaluru">Bengaluru (Zone 01)</option>
+              <option value="Chennai">Chennai (Zone 02)</option>
+              <option value="Hyderabad">Hyderabad (Zone 03)</option>
+              <option value="Mumbai">Mumbai (Zone 04)</option>
+              <option value="New Delhi">New Delhi (Zone 05)</option>
+            </select>
+          </p>
+          <p>
+            <span>Select Subjects to Appear For (Choose at least one): *</span><br>
+            <input type="checkbox" id="sub101" name="subjects" value="SUB-101" checked> <label for="sub101">SUB-101: Engineering Mathematics</label><br>
+            <input type="checkbox" id="sub102" name="subjects" value="SUB-102"> <label for="sub102">SUB-102: Applied Physics</label><br>
+            <input type="checkbox" id="sub103" name="subjects" value="SUB-103"> <label for="sub103">SUB-103: Computer Science &amp; Logic</label><br>
+            <input type="checkbox" id="sub104" name="subjects" value="SUB-104"> <label for="sub104">SUB-104: General Aptitude &amp; English</label>
+          </p>
+          <p>
+            <label for="address">Permanent Correspondence Address: *</label><br>
+            <textarea id="address" name="address" rows="3" cols="50" placeholder="Enter house number, street, city, state, and PIN code" required></textarea>
+          </p>
+          <p>
+            <label for="idProof">Upload Passport Photo &amp; Government ID (PDF/JPG): *</label><br>
+            <input type="file" id="idProof" name="idProof" accept=".jpg,.jpeg,.png,.pdf" required>
+          </p>
+          <p>
+            <input type="checkbox" id="declaration" name="declaration" required>
+            <label for="declaration">I hereby declare that all details furnished above are true and I satisfy the eligibility criteria. *</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Submit Examination Registration</button>
+          <button type="reset">Reset Form</button>
+        </p>
+        <div id="formFeedback" class="form-feedback"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p><strong>Examination Controller Helpdesk:</strong> support@naeb-exams.edu.in | Toll-Free: 1800-112-2026</p>
+    <p>&copy; 2026 National Academic Examination Board. All Rights Reserved.</p>
+  </footer>
+  <a href="#contact" class="fixed-help-btn">24x7 Exam Helpdesk</a>
+  <div id="deadlineToast" class="toast-notification"><span><strong>Reminder:</strong> Last date for AICAT-2026 registration is December 15, 2026!</span></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+[
+  {
+    "centerCode": "BLR-01",
+    "city": "Bengaluru",
+    "venue": "PES Digital Assessment Hub, Electronic City",
+    "date": "2027-01-10",
+    "seatsAvailable": 142,
+    "status": "Open"
+  },
+  {
+    "centerCode": "CHN-02",
+    "city": "Chennai",
+    "venue": "Anna IT Park CBT Center, Guindy",
+    "date": "2027-01-11",
+    "seatsAvailable": 88,
+    "status": "Open"
+  },
+  {
+    "centerCode": "HYD-03",
+    "city": "Hyderabad",
+    "venue": "HITEC City Cyber Testing Arena",
+    "date": "2027-01-12",
+    "seatsAvailable": 19,
+    "status": "Filling Fast"
+  },
+  {
+    "centerCode": "MUM-04",
+    "city": "Mumbai",
+    "venue": "Powai Tech Assessment Complex",
+    "date": "2027-01-13",
+    "seatsAvailable": 0,
+    "status": "Full"
+  }
+]

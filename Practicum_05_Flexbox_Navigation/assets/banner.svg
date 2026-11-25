@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <rect width="800" height="220" fill="#1e3a8a"/>
+  <circle cx="720" cy="40" r="90" fill="#2563eb" opacity="0.4"/>
+  <text x="40" y="95" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="bold">National Academic Examination Board (NAEB)</text>
+  <text x="40" y="135" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="18">Annual Undergraduate Entrance &amp; Semester Assessment Portal - 2026</text>
+  <rect x="40" y="158" width="210" height="32" rx="6" fill="#f59e0b"/>
+  <text x="58" y="179" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Registrations Open Now</text>
+</svg>

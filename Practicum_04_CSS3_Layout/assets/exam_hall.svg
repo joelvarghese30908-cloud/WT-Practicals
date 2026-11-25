@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#e0f2fe"/>
+  <rect x="30" y="40" width="340" height="170" rx="8" fill="#0284c7"/>
+  <text x="200" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="22" font-weight="bold">CBT Examination Center</text>
+  <text x="200" y="150" text-anchor="middle" fill="#e0f2fe" font-family="Arial" font-size="14">Biometric Verification &amp; Proctored Labs</text>
+</svg>

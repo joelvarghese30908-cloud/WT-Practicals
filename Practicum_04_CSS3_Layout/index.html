@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAEB Examination Registration Portal - Practicum 4 (CSS3 Layout)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>National Academic Examination Board (NAEB)</h1>
+    <p>Official Examination Registration &amp; Candidate Information Portal</p>
+    <figure>
+      <img src="assets/banner.svg" alt="NAEB Examination Portal Banner" width="800">
+      <figcaption>Figure 1: NAEB All-India Common Assessment Test 2026 Official Banner</figcaption>
+    </figure>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#exam-details">Examination Details</a></li>
+      <li><a href="#subjects-schedule">Subjects &amp; Schedule</a></li>
+      <li><a href="#multimedia-guide">Candidate Briefing &amp; Walkthrough</a></li>
+      <li><a href="#eligibility">Eligibility Criteria</a></li>
+      <li><a href="#instructions">Candidate Instructions</a></li>
+      <li><a href="#registration-form">Student Registration Form</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="exam-details">
+      <h2>1. Examination Details</h2>
+      <article>
+        <h3>All-India Common Assessment Test (AICAT - 2026)</h3>
+        <p>The National Academic Examination Board conducts the All-India Common Assessment Test for admission into undergraduate Engineering, Sciences, and Management programs across affiliated institutions.</p>
+        <ul>
+          <li><strong>Examination Mode:</strong> Computer-Based Test (CBT) at designated centers</li>
+          <li><strong>Duration:</strong> 180 Minutes (3 Hours)</li>
+          <li><strong>Registration Window:</strong> November 1, 2026 to December 15, 2026</li>
+          <li><strong>Application Fee:</strong> INR 1,200 (General/OBC) | INR 600 (SC/ST/PwD)</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="subjects-schedule">
+      <h2>2. Subjects, Date &amp; Time Schedule</h2>
+      <table >
+        <thead>
+          <tr>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Exam Date</th>
+            <th>Time Slot</th>
+            <th>Max Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SUB-101</td>
+            <td>Engineering Mathematics</td>
+            <td>January 10, 2027</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>SUB-102</td>
+            <td>Applied Physics</td>
+            <td>January 11, 2027</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>SUB-103</td>
+            <td>Computer Science &amp; Logic</td>
+            <td>January 12, 2027</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>SUB-104</td>
+            <td>General Aptitude &amp; English</td>
+            <td>January 13, 2027</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>100</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="multimedia-guide">
+      <h2>3. Multimedia Candidate Briefing &amp; Center Locator</h2>
+      <article>
+        <h3>Audio Instructions for Visually Assisted &amp; General Candidates</h3>
+        <p>Listen to the official Controller of Examinations audio advisory before filling out the form:</p>
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser does not support the HTML5 audio element.
+        </audio>
+        <p><small><em>Audio Caption: Pre-examination guidelines regarding biometric attendance and hall ticket verification.</em></small></p>
+      </article>
+
+      <article>
+        <h3>Computer-Based Test (CBT) Interface Walkthrough Video</h3>
+        <video width="560" height="315" controls poster="assets/exam_hall.svg">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the HTML5 video tag.
+        </video>
+        <p><small><em>Video Caption: Step-by-step demonstration of navigating questions, marking for review, and submitting the online exam.</em></small></p>
+      </article>
+
+      <article>
+        <h3>Primary Examination Center Map &amp; Information Brochure (Embedded Frame)</h3>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.5800%2C12.9600%2C77.6100%2C12.9850&amp;layer=mapnik" width="560" height="300" title="Regional Examination Center Map"></iframe>
+        <p><small><em>Interactive Map: Regional CBT Center Zone - Bengaluru Central Campus.</em></small></p>
+      </article>
+    </section>
+
+    <section id="eligibility">
+      <h2>4. Eligibility Criteria</h2>
+      <ul>
+        <li>Candidate must have passed or be appearing in Class 12 / Pre-University Examination from a recognized board.</li>
+        <li>Minimum aggregate of 60% marks in Physics, Chemistry, and Mathematics (55% for reserved categories).</li>
+        <li>Candidates born on or after October 1, 2003 are eligible to apply.</li>
+      </ul>
+    </section>
+
+    <section id="instructions">
+      <h2>5. Mandatory Examination Instructions</h2>
+      <ol>
+        <li>Report to the examination center at least 60 minutes prior to the scheduled start time.</li>
+        <li>Carry a printed copy of the QR-enabled Hall Ticket along with an original government photo ID.</li>
+        <li>Electronic gadgets, smartwatches, and programmable calculators are strictly prohibited.</li>
+      </ol>
+    </section>
+      <section id="registration-form">
+      <h2>6. Student Examination Registration Form</h2>
+      <p>Complete all mandatory fields accurately. Information entered here will be printed on your Hall Ticket.</p>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Personal &amp; Account Details</legend>
+          <p>
+            <label for="fullName">Full Name (as per Class 10 Certificate): *</label><br>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g., Aarav Sharma" required minlength="3" maxlength="60">
+          </p>
+          <p>
+            <label for="email">Email Address: *</label><br>
+            <input type="email" id="email" name="email" placeholder="candidate@example.com" required>
+          </p>
+          <p>
+            <label for="password">Create Portal Password: *</label><br>
+            <input type="password" id="password" name="password" placeholder="Minimum 8 characters" required minlength="8">
+          </p>
+          <p>
+            <label for="dob">Date of Birth: *</label><br>
+            <input type="date" id="dob" name="dob" min="2003-10-01" max="2010-12-31" required>
+          </p>
+          <p>
+            <label for="percentage">Class 12 Aggregate Percentage (%): *</label><br>
+            <input type="number" id="percentage" name="percentage" min="55" max="100" step="0.1" placeholder="e.g., 84.5" required>
+          </p>
+          <p>
+            <span>Gender: *</span><br>
+            <input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Examination Preferences &amp; Documents</legend>
+          <p>
+            <label for="examCity">Preferred Examination Center City: *</label><br>
+            <select id="examCity" name="examCity" required>
+              <option value="">-- Select Examination City --</option>
+              <option value="Bengaluru">Bengaluru (Zone 01)</option>
+              <option value="Chennai">Chennai (Zone 02)</option>
+              <option value="Hyderabad">Hyderabad (Zone 03)</option>
+              <option value="Mumbai">Mumbai (Zone 04)</option>
+              <option value="New Delhi">New Delhi (Zone 05)</option>
+            </select>
+          </p>
+          <p>
+            <span>Select Subjects to Appear For (Choose at least one): *</span><br>
+            <input type="checkbox" id="sub101" name="subjects" value="SUB-101" checked> <label for="sub101">SUB-101: Engineering Mathematics</label><br>
+            <input type="checkbox" id="sub102" name="subjects" value="SUB-102"> <label for="sub102">SUB-102: Applied Physics</label><br>
+            <input type="checkbox" id="sub103" name="subjects" value="SUB-103"> <label for="sub103">SUB-103: Computer Science &amp; Logic</label><br>
+            <input type="checkbox" id="sub104" name="subjects" value="SUB-104"> <label for="sub104">SUB-104: General Aptitude &amp; English</label>
+          </p>
+          <p>
+            <label for="address">Permanent Correspondence Address: *</label><br>
+            <textarea id="address" name="address" rows="3" cols="50" placeholder="Enter house number, street, city, state, and PIN code" required></textarea>
+          </p>
+          <p>
+            <label for="idProof">Upload Passport Photo &amp; Government ID (PDF/JPG): *</label><br>
+            <input type="file" id="idProof" name="idProof" accept=".jpg,.jpeg,.png,.pdf" required>
+          </p>
+          <p>
+            <input type="checkbox" id="declaration" name="declaration" required>
+            <label for="declaration">I hereby declare that all details furnished above are true and I satisfy the eligibility criteria. *</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Submit Examination Registration</button>
+          <button type="reset">Reset Form</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p><strong>Examination Controller Helpdesk:</strong> support@naeb-exams.edu.in | Toll-Free: 1800-112-2026</p>
+    <p>&copy; 2026 National Academic Examination Board. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
